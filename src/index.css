@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0e1014;
+  color: #c8d0e0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+}
+
+/* Step grid layout */
+.step-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 300px;
+  gap: 0 20px;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .step-row {
+    grid-template-columns: 48px 1fr;
+  }
+  .step-visual {
+    grid-column: 2;
+    margin-top: 14px;
+  }
+  header,
+  .px-10 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+.nav-item-link:hover {
+  color: #eef2ff !important;
+  background: #1e2a3a;
+}
+
+/* Touch hint only visible on coarse-pointer (touch) devices */
+.touch-hint {
+  display: none;
+}
+
+@media (pointer: coarse) {
+  .touch-hint {
+    display: block;
+  }
+}
